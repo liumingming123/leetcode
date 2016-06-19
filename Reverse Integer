@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int reverse(int x) {
+         bool minus = false;
+        if (x < 0) {
+            x = -x;
+            minus = true;
+        }
+       long int res = 0;
+        while (x) {
+            res *= 10;
+            res += x % 10;
+            x /= 10;
+        }
+        if(res>=2147483647) {return 0;}
+        else{
+        return minus ? (-res) : res;}
+    }
+    
+};
